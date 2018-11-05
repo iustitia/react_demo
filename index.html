@@ -23,8 +23,19 @@
 <body>
     <div id="container"></div>
   <script type="text/babel">
+    class HelloWorld extends React.Component {
+        render(){
+            return <p>Hello, {this.props.greetTarget}!</p>;
+        }
+    }
     ReactDOM.render(
-        <h1>Just my name</h1>,
+        <div>
+            <HelloWorld greetTarget="component"/>
+            <HelloWorld greetTarget="ds"/>
+            <HelloWorld greetTarget="Robot"/>
+            <HelloWorld/>
+            <HelloWorld/>
+        </div>,
         document.querySelector("#container")
     );
   </script>
