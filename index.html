@@ -28,6 +28,15 @@
             return <p>Hello, {this.props.greetTarget}!</p>;
         }
     }
+    class Butonify extends React.Component {
+        render() {
+            return(
+                <div>
+                    <button type={this.props.behaviour}>{this.props.children}</button>
+                </div>
+            )
+        }
+    }
     ReactDOM.render(
         <div>
             <HelloWorld greetTarget="component"/>
@@ -35,6 +44,7 @@
             <HelloWorld greetTarget="Robot"/>
             <HelloWorld/>
             <HelloWorld/>
+            <Butonify bahaviour="submit">SEND DATA</Butonify>
         </div>,
         document.querySelector("#container")
     );
